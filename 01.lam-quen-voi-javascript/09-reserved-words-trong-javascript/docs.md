@@ -2,6 +2,7 @@
 
 ## Dưới đây là danh sách các từ dành riêng
 
+| ----- | ----- | ----- | ----- |
 |abstract| arguments| await*| boolean|
 |break| byte| case| catch|
 |char| class*| const continue|
