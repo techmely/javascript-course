@@ -10,12 +10,15 @@ function doAsync(url) {
 
 async function run() {
   try {
-    const value1 = await doAsync("https://httpbin.org/get");
-    console.log("value 1", value1);
-    throw Error("call api fail");
-    const value2 = await doAsync("https://httpbin.org/ip");
-    console.log("value 2", value2);
+    const result = await Promise.all([
+      doAsync("https://httpbin.org/get"),
+      doAsync("https://httpbin.org/ip"),
+      doAsync("https://httpbin.org/headers"),
+    ]);
+    console.log(result);
   } catch (error) {
     console.error(error);
   }
 }
+
+run();
