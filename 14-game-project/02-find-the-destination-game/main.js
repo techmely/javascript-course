@@ -1,0 +1,52 @@
+const player = document.getElementById("player");
+const target = document.getElementById("target");
+
+const step = 50;
+
+function randomPosition() {
+  const x = Math.floor(Math.random() * 5) * step;
+  const y = Math.floor(Math.random() * 5) * step;
+  return { x, y };
+}
+
+function setRandomTargetPosition() {
+  const position = randomPosition();
+  target.style.bottom = `${position.y}px`;
+  target.style.right = `${position.x}px`;
+}
+
+setRandomTargetPosition();
+
+document.addEventListener("keydown", (event) => {
+  const key = event.key;
+
+  let playerTop = parseInt(getComputedStyle(player).top);
+  let playerLeft = parseInt(getComputedStyle(player).left);
+
+  if (key === "ArrowUp" && playerTop > 0) {
+    player.style.top = `${playerTop - step}px`;
+  } else if (key === "ArrowDown" && playerTop < 250) {
+    player.style.top = `${playerTop + step}px`;
+  } else if (key === "ArrowLeft" && playerLeft > 0) {
+    player.style.left = `${playerLeft - step}px`;
+  } else if (key === "ArrowRight" && playerLeft < 250) {
+    player.style.left = `${playerLeft + step}px`;
+  }
+
+  if (checkCollision(player, target)) {
+    alert("You win!");
+    setRandomTargetPosition();
+  }
+});
+
+function checkCollision(player, target) {
+  const playerRect = player.getBoundingClientRect();
+  const targetRect = target.getBoundingClientRect();
+
+  return (
+    playerRect.top < targetRect.bottom &&
+    playerRect.bottom > targetRect.top &&
+    playerRect.left < targetRect.right &&
+    playerRect.right > targetRect.left
+  );
+}
