@@ -3,25 +3,37 @@ const target = document.getElementById("target");
 
 const step = 50;
 
-function randomPosition() {
+const randomPosition = () => {
   const x = Math.floor(Math.random() * 5) * step;
   const y = Math.floor(Math.random() * 5) * step;
   return { x, y };
-}
+};
 
-function setRandomTargetPosition() {
+const setRandomTargetPosition = () => {
   const position = randomPosition();
-  target.style.bottom = `${position.y}px`;
-  target.style.right = `${position.x}px`;
-}
+  target.style.left = `${position.x}px`;
+  target.style.top = `${position.y}px`;
+};
 
 setRandomTargetPosition();
+
+const checkCollision = (player, target) => {
+  const playerRect = player.getBoundingClientRect();
+  const targetRect = target.getBoundingClientRect();
+
+  return (
+    playerRect.top === targetRect.top &&
+    playerRect.bottom === targetRect.bottom &&
+    playerRect.left === targetRect.left &&
+    playerRect.right === targetRect.right
+  );
+};
 
 document.addEventListener("keydown", (event) => {
   const key = event.key;
 
-  let playerTop = parseInt(getComputedStyle(player).top);
-  let playerLeft = parseInt(getComputedStyle(player).left);
+  const playerTop = parseInt(getComputedStyle(player).top);
+  const playerLeft = parseInt(getComputedStyle(player).left);
 
   if (key === "ArrowUp" && playerTop > 0) {
     player.style.top = `${playerTop - step}px`;
@@ -38,15 +50,3 @@ document.addEventListener("keydown", (event) => {
     setRandomTargetPosition();
   }
 });
-
-function checkCollision(player, target) {
-  const playerRect = player.getBoundingClientRect();
-  const targetRect = target.getBoundingClientRect();
-
-  return (
-    playerRect.top < targetRect.bottom &&
-    playerRect.bottom > targetRect.top &&
-    playerRect.left < targetRect.right &&
-    playerRect.right > targetRect.left
-  );
-}

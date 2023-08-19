@@ -1,17 +1,16 @@
 body {
-  margin: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100vh;
   background-color: #f0f0f0;
 }
 
-.game-container {
+#game-container {
   position: relative;
   width: 400px;
   height: 400px;
-  border: 1px solid #000;
+  border: 2px solid #000;
   overflow: hidden;
 }
 
