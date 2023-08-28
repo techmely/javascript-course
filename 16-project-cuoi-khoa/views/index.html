@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechMely Shop | Javascript course</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="icon" href="../images/favicon.png" type="image/png" />
+  </head>
+  <body>
+    <svg
+      aria-hidden="true"
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
+        <symbol id="icon-cart" viewBox="0 0 24 24">
+          <path
+            d="M17.016 18q0.797 0 1.383 0.609t0.586 1.406-0.586 1.383-1.383 0.586-1.406-0.586-0.609-1.383 0.609-1.406 1.406-0.609zM0.984 2.016h3.281l0.938 1.969h14.813q0.422 0 0.703 0.305t0.281 0.727q0 0.047-0.141 0.469l-3.563 6.469q-0.563 1.031-1.734 1.031h-7.453l-0.891 1.641-0.047 0.141q0 0.234 0.234 0.234h11.578v2.016h-12q-0.797 0-1.383-0.609t-0.586-1.406q0-0.469 0.234-0.938l1.359-2.484-3.609-7.594h-2.016v-1.969zM6.984 18q0.797 0 1.406 0.609t0.609 1.406-0.609 1.383-1.406 0.586-1.383-0.586-0.586-1.383 0.586-1.406 1.383-0.609z"
+          ></path>
+        </symbol>
+        <symbol id="icon-prev" viewBox="0 0 24 24">
+          <path
+            d="M15.422 16.594l-1.406 1.406-6-6 6-6 1.406 1.406-4.594 4.594z"
+          ></path>
+        </symbol>
+        <symbol id="icon-next" viewBox="0 0 24 24">
+          <path
+            d="M8.578 16.594l4.594-4.594-4.594-4.594 1.406-1.406 6 6-6 6z"
+          ></path>
+        </symbol>
+        <symbol id="icon-up" viewBox="0 0 24 24">
+          <path
+            d="M7.406 15.422l-1.406-1.406 6-6 6 6-1.406 1.406-4.594-4.594z"
+          ></path>
+        </symbol>
+        <symbol id="icon-down" viewBox="0 0 24 24">
+          <path
+            d="M7.406 8.578l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z"
+          ></path>
+        </symbol>
+        <symbol id="icon-close" viewBox="0 0 20 20">
+          <path
+            d="M10 8.586l-7.071-7.071-1.414 1.414 7.071 7.071-7.071 7.071 1.414 1.414 7.071-7.071 7.071 7.071 1.414-1.414-7.071-7.071 7.071-7.071-1.414-1.414-7.071 7.071z"
+          ></path>
+        </symbol>
+        <symbol id="icon-plus" viewBox="0 0 24 24">
+          <path
+            d="M5 13h6v6c0 0.552 0.448 1 1 1s1-0.448 1-1v-6h6c0.552 0 1-0.448 1-1s-0.448-1-1-1h-6v-6c0-0.552-0.448-1-1-1s-1 0.448-1 1v6h-6c-0.552 0-1 0.448-1 1s0.448 1 1 1z"
+          ></path>
+        </symbol>
+        <symbol id="icon-minus" viewBox="0 0 24 24">
+          <path
+            d="M5 13h14c0.552 0 1-0.448 1-1s-0.448-1-1-1h-14c-0.552 0-1 0.448-1 1s0.448 1 1 1z"
+          ></path>
+        </symbol>
+        <symbol id="icon-warning" viewBox="0 0 24 24">
+          <path
+            d="M7.86 1c-0.256 0-0.512 0.098-0.707 0.293l-5.86 5.86c-0.181 0.181-0.293 0.431-0.293 0.707v8.28c0 0.256 0.098 0.512 0.293 0.707l5.86 5.86c0.181 0.181 0.431 0.293 0.707 0.293h8.28c0.256 0 0.512-0.098 0.707-0.293l5.86-5.86c0.181-0.181 0.293-0.431 0.293-0.707v-8.28c0-0.256-0.098-0.512-0.293-0.707l-5.86-5.86c-0.181-0.181-0.431-0.293-0.707-0.293zM8.274 3h7.452l5.274 5.274v7.452l-5.274 5.274h-7.452l-5.274-5.274v-7.452zM11 8v4c0 0.552 0.448 1 1 1s1-0.448 1-1v-4c0-0.552-0.448-1-1-1s-1 0.448-1 1zM12 17c0.552 0 1-0.448 1-1s-0.448-1-1-1-1 0.448-1 1 0.448 1 1 1z"
+          ></path>
+        </symbol>
+        <symbol id="icon-tick" viewBox="0 0 24 24">
+          <path
+            d="M19.293 5.293l-10.293 10.293-4.293-4.293c-0.391-0.391-1.024-0.391-1.414 0s-0.391 1.024 0 1.414l5 5c0.391 0.391 1.024 0.391 1.414 0l11-11c0.391-0.391 0.391-1.024 0-1.414s-1.024-0.391-1.414 0z"
+          ></path>
+        </symbol>
+        <symbol id="icon-remove" viewBox="0 0 24 24">
+          <path
+            d="M18 7v13c0 0.276-0.111 0.525-0.293 0.707s-0.431 0.293-0.707 0.293h-10c-0.276 0-0.525-0.111-0.707-0.293s-0.293-0.431-0.293-0.707v-13zM17 5v-1c0-0.828-0.337-1.58-0.879-2.121s-1.293-0.879-2.121-0.879h-4c-0.828 0-1.58 0.337-2.121 0.879s-0.879 1.293-0.879 2.121v1h-4c-0.552 0-1 0.448-1 1s0.448 1 1 1h1v13c0 0.828 0.337 1.58 0.879 2.121s1.293 0.879 2.121 0.879h10c0.828 0 1.58-0.337 2.121-0.879s0.879-1.293 0.879-2.121v-13h1c0.552 0 1-0.448 1-1s-0.448-1-1-1zM9 5v-1c0-0.276 0.111-0.525 0.293-0.707s0.431-0.293 0.707-0.293h4c0.276 0 0.525 0.111 0.707 0.293s0.293 0.431 0.293 0.707v1zM9 11v6c0 0.552 0.448 1 1 1s1-0.448 1-1v-6c0-0.552-0.448-1-1-1s-1 0.448-1 1zM13 11v6c0 0.552 0.448 1 1 1s1-0.448 1-1v-6c0-0.552-0.448-1-1-1s-1 0.448-1 1z"
+          ></path>
+        </symbol>
+        <symbol id="icon-update" viewBox="0 0 24 24">
+          <path
+            d="M21.433 8.666c-0.921-2.603-2.812-4.587-5.12-5.689s-5.040-1.323-7.643-0.402c-1.472 0.521-2.752 1.354-3.744 2.364l-2.926 2.75v-3.689c0-0.552-0.448-1-1-1s-1 0.448-1 1v5.998c0 0.015 0 0.030 0.001 0.044 0.005 0.115 0.029 0.225 0.069 0.326 0.040 0.102 0.098 0.198 0.173 0.285 0.012 0.013 0.024 0.027 0.036 0.039 0.091 0.095 0.201 0.172 0.324 0.225 0.119 0.051 0.249 0.080 0.386 0.082 0.004 0 0.007 0 0.011 0h6c0.552 0 1-0.448 1-1s-0.448-0.999-1-0.999h-3.476l2.83-2.659c0.777-0.792 1.797-1.46 2.983-1.88 2.083-0.737 4.265-0.561 6.114 0.322s3.359 2.468 4.096 4.551c0.184 0.521 0.756 0.793 1.276 0.609s0.793-0.756 0.609-1.276zM20.475 15l-2.8 2.631c-1.584 1.585-3.63 2.366-5.679 2.366s-4.095-0.78-5.657-2.342c-0.89-0.89-1.523-1.931-1.883-2.981-0.18-0.522-0.748-0.8-1.271-0.621s-0.8 0.748-0.621 1.271c0.46 1.339 1.257 2.642 2.361 3.745 1.953 1.952 4.514 2.928 7.072 2.927s5.118-0.978 7.048-2.909l2.955-2.775v3.688c0 0.552 0.448 1 1 1s1-0.448 1-1v-5.998c0-0.015 0-0.030-0.001-0.044-0.005-0.115-0.029-0.225-0.069-0.326-0.040-0.102-0.098-0.198-0.173-0.285-0.012-0.013-0.024-0.027-0.036-0.039-0.091-0.095-0.201-0.172-0.324-0.225-0.119-0.051-0.249-0.080-0.386-0.082-0.004 0-0.007 0-0.011 0h-6c-0.552 0-1 0.448-1 1s0.448 1 1 1z"
+          ></path>
+        </symbol>
+      </defs>
+    </svg>
+    <header class="header fixed-header js-header">
+      <div class="container">
+        <div class="header-wrapper">
+          <a class="header__logo" href="#">
+            <img src="../images/favicon.png" alt="Product Image" width="30" />
+            <div class="header__logo__brand">TECHMELY SHOP</div></a
+          >
+          <nav class="header__nav js-headerNav">
+            <div class="header__nav-wrapper js-headerNavWrapper">
+              <div class="header__nav__item-wrapper">
+                <a
+                  href="/#products"
+                  class="header__nav__item link js-headerNavItem"
+                  title="products"
+                  >products</a
+                ><button
+                  class="header__nav__button js-headerNavButton"
+                  type="button"
+                >
+                  <svg class="icon icon-down">
+                    <use xlink:href="#icon-down"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="header__nav__dropdown">
+                <a
+                  class="header__nav__dropdown__item link js-headerNavDropdownItem"
+                  href="/#bag"
+                  title="bag"
+                  >Bag</a
+                ><a
+                  class="header__nav__dropdown__item link js-headerNavDropdownItem"
+                  href="/#shirt"
+                  title="shirt"
+                  >Shirt</a
+                ><a
+                  class="header__nav__dropdown__item link js-headerNavDropdownItem"
+                  href="/#necklace"
+                  title="necklace"
+                  >necklace</a
+                >
+              </div>
+            </div>
+            <div class="header__nav-wrapper js-headerNavWrapper">
+              <div class="header__nav__item-wrapper">
+                <a
+                  href="/#faqs"
+                  class="header__nav__item link js-headerNavItem"
+                  title="faq's"
+                  >faq's</a
+                >
+              </div>
+            </div>
+            <div class="header__nav-wrapper js-headerNavWrapper">
+              <div class="header__nav__item-wrapper">
+                <a
+                  href="/#contact"
+                  class="header__nav__item link js-headerNavItem"
+                  title="contact"
+                  >contact</a
+                ><button
+                  class="header__nav__button js-headerNavButton"
+                  type="button"
+                >
+                  <svg class="icon icon-down">
+                    <use xlink:href="#icon-down"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="header__nav__dropdown">
+                <a
+                  class="header__nav__dropdown__item link js-headerNavDropdownItem"
+                  href="/#reach-us"
+                  title="reach us"
+                  >reach us</a
+                ><a
+                  class="header__nav__dropdown__item link js-headerNavDropdownItem"
+                  href="/#about-us"
+                  title="about us"
+                  >about us</a
+                ><a
+                  class="header__nav__dropdown__item link js-headerNavDropdownItem"
+                  href="/#find-us"
+                  title="find us"
+                  >find us</a
+                >
+              </div>
+            </div>
+          </nav>
+          <div class="header__button-container">
+            <button
+              class="header__button header__button--cart js-headerButtonCart"
+              type="button"
+              aria-label="Header Cart"
+            >
+              <svg class="icon icon-cart">
+                <use xlink:href="#icon-cart"></use>
+              </svg>
+              <span class="header__button--cart__title js-headerCartTitle"
+                >Cart(1)</span
+              >
+            </button>
+            <button
+              class="header__button header__button--menu js-headerButtonMenu"
+              type="button"
+              aria-label="Menu button"
+            >
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-menu"
+                viewBox="0 0 24 24"
+              >
+                <path class="menu-line" d="M6 7.875h12"></path>
+                <path class="menu-line" d="M9 11.625h9"></path>
+                <path class="menu-line" d="M6 15.375h12"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <aside class="cart js-cart">
+        <div class="cart-top-wrapper">
+          <header class="cart__header">My Cart</header>
+          <button
+            class="cart__close js-cartCloseButton"
+            type="button"
+            aria-label="Close Cart"
+          >
+            <svg class="icon icon-close">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="cart__empty js-cartEmpty" style="display: none">
+          There is nothing added in your cart.
+        </div>
+        <div class="cart__product-container js-cartProductContainer">
+          <div class="cart__product js-cartProduct" data-id="2">
+            <div class="cart__product-top-wrapper">
+              <figure>
+                <img
+                  src="../images/sg-2.jpg"
+                  alt="Product Image"
+                  class="cart__product__image"
+                />
+              </figure>
+              <div class="cart__product__content">
+                <div class="cart__product__content__title">Cute bag</div>
+                <div class="cart__product__content__desc">Nude lovers</div>
+                <div class="product__quantity">
+                  <button
+                    type="button"
+                    aria-label="Product Decrease"
+                    class="product__quantity__item product__quantity__item--decrease js-quantityButton js-quantityDecreaseButton"
+                  >
+                    <svg class="icon icon-minus">
+                      <use xlink:href="#icon-minus"></use>
+                    </svg>
+                  </button>
+                  <input
+                    type="number"
+                    class="product__quantity__item product__quantity__item--input js-quantityInput"
+                    max="7"
+                    value="7"
+                  />
+                  <button
+                    type="button"
+                    aria-label="Product Increase"
+                    class="product__quantity__item product__quantity__item--increase js-quantityButton js-quantityIncreaseButton"
+                  >
+                    <svg class="icon icon-plus">
+                      <use xlink:href="#icon-plus"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="cart__product__price js-cartProductPrice">$1,205</div>
+          </div>
+        </div>
+        <div class="cart__total-container js-cartTotalContainer">
+          <div class="cart__total js-cartProducts"></div>
+          <div class="cart__total js-cartTotal">
+            <div class="cart__total__title">Total Price:</div>
+            <div class="cart__total__price">$8,435</div>
+          </div>
+          <div class="cart__total js-cartQuantity">
+            <div class="cart__total__title">Product Quantity:</div>
+            <div class="cart__total__quantity">7 products</div>
+          </div>
+        </div>
+      </aside>
+      <section class="hero section-spacing">
+        <div class="container">
+          <div class="hero-wrapper">
+            <div class="slider">
+              <div class="slider__item-container js-sliderItemContainer">
+                <a href="#" class="slider__item js-sliderItem next">
+                  <img
+                    class="slider__item__image"
+                    src="../images/slider-1.png"
+                    alt="Shopping"
+                  />
+                ><a href="#" class="slider__item js-sliderItem last">
+                  <img
+                    class="slider__item__image"
+                    src="../images/slider-2.png"
+                    alt="Shopping"
+                  />
+               </a
+                ><a href="#" class="slider__item js-sliderItem active">
+                  <img
+                    class="slider__item__image"
+                    src="../images/slider-3.png"
+                    alt="Shopping"
+                  />
+                </a>
+              </div>
+              <div class="slider__button-container">
+                <button
+                  class="slider__button js-btnPrev"
+                  type="button"
+                  aria-label="Prev"
+                >
+                  <svg class="icon icon-prev">
+                    <use xlink:href="#icon-prev"></use>
+                  </svg>
+                </button>
+                <button
+                  class="slider__button js-btnNext"
+                  type="button"
+                  aria-label="Next"
+                >
+                  <svg class="icon icon-next">
+                    <use xlink:href="#icon-next"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="showcase section-spacing js-showcase">
+        <div class="container">
+          <div class="showcase-wrapper">
+            <div class="announcement">
+              <div class="announcement__title">Special for you</div>
+              <p class="announcement__subtitle">
+                Here is the new collection to make you look beautiful!
+              </p>
+            </div>
+            <div class="featured">
+              <div class="featured-wrapper">
+                <div
+                  class="featured__item-container featured__item-container--left"
+                >
+                  <figure class="featured__item">
+                    <img
+                      class="featured__item__image"
+                      src="../images/bag-cover.jpg"
+                      alt="Product Image"
+                    />
+                    <button
+                      class="button button--secondary js-featuredItemButton"
+                      type="button"
+                      aria-label="Discover bag"
+                      data-name="bag"
+                    >
+                      Discover bag
+                    </button>
+                  </figure>
+                  <figure class="featured__item">
+                    <img
+                      class="featured__item__image"
+                      src="../images/shirt-cover.jpg"
+                      alt="Product Image"
+                    />
+                    <button
+                      class="button button--secondary js-featuredItemButton"
+                      type="button"
+                      aria-label="Discover shirt"
+                      data-name="shirt"
+                    >
+                      Discover shirt
+                    </button>
+                  </figure>
+                </div>
+                <div
+                  class="featured__item-container featured__item-container--right"
+                >
+                  <figure class="featured__item">
+                    <img
+                      class="featured__item__image"
+                      src="../images/necklace-cover.jpg"
+                      alt="Product Image"
+                    />
+                    <button
+                      class="button button--secondary js-featuredItemButton"
+                      type="button"
+                      aria-label="All Necklaces"
+                      data-name="necklace"
+                    >
+                      All Necklaces
+                    </button>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="countdown section-spacing js-countdown">
+        <div class="container">
+          <div class="countdown-wrapper">
+            <div class="countdown__text-wrapper">
+              <div class="countdown__text">
+                Get
+                <span class="countdown__text--highlighted">50% Off </span>Before
+                It's too Late!<br />
+              </div>
+              <div
+                class="countdown__text countdown__text--secondary js-endDate"
+              >
+                Offer ends on <time>Thursday, 7 September 2023 9:14</time>
+              </div>
+            </div>
+            <div class="countdown__box-wrapper js-countdown">
+              <div class="countdown__box">
+                <div class="countdown__box__time js-countdownValue">11</div>
+                <div class="countdown__box__text">days</div>
+              </div>
+              <div class="countdown__box">
+                <div class="countdown__box__time js-countdownValue">21</div>
+                <div class="countdown__box__text">hours</div>
+              </div>
+              <div class="countdown__box">
+                <div class="countdown__box__time js-countdownValue">54</div>
+                <div class="countdown__box__text">mins</div>
+              </div>
+              <div class="countdown__box">
+                <div class="countdown__box__time js-countdownValue">36</div>
+                <div class="countdown__box__text">secs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="product section-spacing" id="products">
+        <div class="container">
+          <header class="section-name-wrapper">
+            <div class="section-name mark">Products</div>
+          </header>
+          <div class="product__category-container js-productCategoryContainer">
+            <button
+              type="button"
+              class="product__category js-productCategory"
+              aria-label="all"
+              data-name="all"
+            >
+              all</button
+            ><button
+              type="button"
+              class="product__category js-productCategory"
+              aria-label="bag"
+              data-name="bag"
+            >
+              bag</button
+            ><button
+              type="button"
+              class="product__category js-productCategory"
+              aria-label="shirt"
+              data-name="shirt"
+            >
+              shirt</button
+            ><button
+              type="button"
+              class="product__category js-productCategory is-active"
+              aria-label="necklace"
+              data-name="necklace"
+            >
+              necklace
+            </button>
+          </div>
+          <div class="product-container js-productContainer">
+            <div
+              class="product__item js-productItem"
+              data-id="1"
+              style="display: none"
+            >
+              <img
+                class="product__item__image"
+                src="../images/sg-1.jpg"
+                alt="Sweet bag"
+              />
+              <div class="product__item__detail">
+                <div class="product__item__detail__title">Sweet bag</div>
+                <div class="product__item__detail__desc">
+                  Green sunshine of summer
+                </div>
+                <div class="product__item__detail__price js-productItemPrice">
+                  $1,129
+                </div>
+              </div>
+              <button
+                class="button button--primary js-productItemButton"
+                type="button"
+                aria-label="Add to Cart"
+              >
+                Add to Cart
+              </button>
+            </div>
+            <div
+              class="product__item js-productItem"
+              data-id="2"
+              style="display: none"
+            >
+              <img
+                class="product__item__image"
+                src="../images/sg-2.jpg"
+                alt="Cute bag"
+              />
+              <div class="product__item__detail">
+                <div class="product__item__detail__title">Cute bag</div>
+                <div class="product__item__detail__desc">Nude lovers</div>
+                <div class="product__item__detail__price js-productItemPrice">
+                  $1,205
+                </div>
+              </div>
+              <div class="product__quantity js-quantity">
+                <button
+                  class="product__quantity__item product__quantity__item--decrease js-quantityButton js-quantityDecreaseButton"
+                  type="button"
+                  aria-label="Product Decrease"
+                >
+                  <svg class="icon icon-minus">
+                    <use xlink:href="#icon-minus"></use>
+                  </svg>
+                </button>
+                <input
+                  class="product__quantity__item product__quantity__item--input js-quantityInput"
+                  type="number"
+                  max="7"
+                  value="1"
+                />
+                <button
+                  class="product__quantity__item product__quantity__item--increase js-quantityButton js-quantityIncreaseButton"
+                  type="button"
+                  aria-label="Product Increase"
+                >
+                  <svg class="icon icon-plus">
+                    <use xlink:href="#icon-plus"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div
+              class="product__item js-productItem"
+              data-id="3"
+              style="display: none"
+            >
+              <img
+                class="product__item__image"
+                src="../images/sg-3.jpg"
+                alt="Cool bag"
+              />
+              <div class="product__item__detail">
+                <div class="product__item__detail__title">Cool bag</div>
+                <div class="product__item__detail__desc">
+                  Ice brown thoughts
+                </div>
+                <div class="product__item__detail__price js-productItemPrice">
+                  $1,995
+                </div>
+              </div>
+              <button
+                class="button button--primary js-productItemButton"
+                type="button"
+                aria-label="Add to Cart"
+              >
+                Add to Cart
+              </button>
+            </div>
+            <div
+              class="product__item js-productItem"
+              data-id="4"
+              style="display: none"
+            >
+              <img
+                class="product__item__image"
+                src="../images/sg-4.jpg"
+                alt="Classic bag"
+              />
+              <div class="product__item__detail">
+                <div class="product__item__detail__title">Classic bag</div>
+                <div class="product__item__detail__desc">
+                  The black dream of the beach
+                </div>
+                <div class="product__item__detail__price js-productItemPrice">
+                  $1,005
+                </div>
+              </div>
+              <button
+                class="button button--primary js-productItemButton"
+                type="button"
+                aria-label="Add to Cart"
+              >
+                Add to Cart
+              </button>
+            </div>
+            <div
+              class="product__item js-productItem"
+              data-id="5"
+              style="display: none"
+            >
+              <img
+                class="product__item__image"
+                src="../images/sg-5.jpg"
+                alt="Modern bag"
+              />
+              <div class="product__item__detail">
+                <div class="product__item__detail__title">Modern bag</div>
+                <div class="product__item__detail__desc">Red and modern</div>
+                <div class="product__item__detail__price js-productItemPrice">
+                  $1,905
+                </div>
+              </div>
+              <button
+                class="button button--primary js-productItemButton"
+                type="button"
+                aria-label="Add to Cart"
+              >
+                Add to Cart
+              </button>
+            </div>
+            <div
+              class="product__item js-productItem"
+              data-id="6"
+              style="display: none"
+            >
+              <img
+                class="product__item__image"
+                src="../images/shirt-1.jpg"
+                alt="Sweet shirt"
+              />
+              <div class="product__item__detail">
+                <div class="product__item__detail__title">Sweet shirt</div>
+                <div class="product__item__detail__desc">
+                  Pink mood of the day
+                </div>
+                <div class="product__item__detail__price js-productItemPrice">
+                  $1,889
+                </div>
+              </div>
+              <button
+                class="button button--primary js-productItemButton"
+                type="button"
+                aria-label="Add to Cart"
+              >
+                Add to Cart
+              </button>
+            </div>
+            <div
+              class="product__item js-productItem"
+              data-id="7"
+              style="display: none"
+            >
+              <img
+                class="product__item__image"
+                src="../images/shirt-2.jpg"
+                alt="Cute shirt"
+              />
+              <div class="product__item__detail">
+                <div class="product__item__detail__title">Cute shirt</div>
+                <div class="product__item__detail__desc">
+                  Let black feelings go
+                </div>
+                <div class="product__item__detail__price js-productItemPrice">
+                  $1,639
+                </div>
+              </div>
+              <button
+                class="button button--primary js-productItemButton"
+                type="button"
+                aria-label="Add to Cart"
+              >
+                Add to Cart
+              </button>
+            </div>
+            <div
+              class="product__item js-productItem"
+              data-id="8"
+              style="display: none"
+            >
+              <img
+                class="product__item__image"
+                src="../images/shirt-3.jpg"
+                alt="Cool shirt"
+              />
+              <div class="product__item__detail">
+                <div class="product__item__detail__title">Cool shirt</div>
+                <div class="product__item__detail__desc">
+                  Feel the Classicism
+                </div>
+                <div class="product__item__detail__price js-productItemPrice">
+                  $1,919
+                </div>
+              </div>
+              <button
+                class="button button--primary js-productItemButton"
+                type="button"
+                aria-label="Add to Cart"
+              >
+                Add to Cart
+              </button>
+            </div>
+            <div
+              class="product__item js-productItem"
+              data-id="9"
+              style="display: none"
+            >
+              <img
+                class="product__item__image"
+                src="../images/shirt-4.jpg"
+                alt="Classic shirt"
+              />
+              <div class="product__item__detail">
+                <div class="product__item__detail__title">Classic shirt</div>
+                <div class="product__item__detail__desc">
+                  Dress up like Swedish for once
+                </div>
+                <div class="product__item__detail__price js-productItemPrice">
+                  $1,635
+                </div>
+              </div>
+              <button
+                class="button button--primary js-productItemButton"
+                type="button"
+                aria-label="Add to Cart"
+              >
+                Add to Cart
+              </button>
+            </div>
+            <div
+              class="product__item js-productItem"
+              data-id="10"
+              style="display: none"
+            >
+              <img
+                class="product__item__image"
+                src="../images/shirt-cover.jpg"
+                alt="Modern shirt"
+              />
+              <div class="product__item__detail">
+                <div class="product__item__detail__title">Modern shirt</div>
+                <div class="product__item__detail__desc">
+                  Favourites of the years
+                </div>
+                <div class="product__item__detail__price js-productItemPrice">
+                  $1,705
+                </div>
+              </div>
+              <button
+                class="button button--primary js-productItemButton"
+                type="button"
+                aria-label="Add to Cart"
+              >
+                Add to Cart
+              </button>
+            </div>
+            <div
+              class="product__item js-productItem"
+              data-id="11"
+              style="display: grid"
+            >
+              <img
+                class="product__item__image"
+                src="../images/necklace-1.jpg"
+                alt="Cool Necklace"
+              />
+              <div class="product__item__detail">
+                <div class="product__item__detail__title">Cool Necklace</div>
+                <div class="product__item__detail__desc">
+                  Innocence of white
+                </div>
+                <div class="product__item__detail__price js-productItemPrice">
+                  $1,619
+                </div>
+              </div>
+              <button
+                class="button button--primary js-productItemButton"
+                type="button"
+                aria-label="Add to Cart"
+              >
+                Add to Cart
+              </button>
+            </div>
+            <div
+              class="product__item js-productItem"
+              data-id="12"
+              style="display: grid"
+            >
+              <img
+                class="product__item__image"
+                src="../images/necklace-2.jpg"
+                alt="Cute Necklace"
+              />
+              <div class="product__item__detail">
+                <div class="product__item__detail__title">Cute Necklace</div>
+                <div class="product__item__detail__desc">Blue feelings</div>
+                <div class="product__item__detail__price js-productItemPrice">
+                  $1,399
+                </div>
+              </div>
+              <button
+                class="button button--primary js-productItemButton"
+                type="button"
+                aria-label="Add to Cart"
+              >
+                Add to Cart
+              </button>
+            </div>
+            <div
+              class="product__item js-productItem"
+              data-id="13"
+              style="display: grid"
+            >
+              <img
+                class="product__item__image"
+                src="../images/necklace-3.jpg"
+                alt="Cool Necklace"
+              />
+              <div class="product__item__detail">
+                <div class="product__item__detail__title">Cool Necklace</div>
+                <div class="product__item__detail__desc">
+                  Shine like a diamond
+                </div>
+                <div class="product__item__detail__price js-productItemPrice">
+                  $1,908
+                </div>
+              </div>
+              <button
+                class="button button--primary js-productItemButton"
+                type="button"
+                aria-label="Add to Cart"
+              >
+                Add to Cart
+              </button>
+            </div>
+            <div
+              class="product__item js-productItem"
+              data-id="14"
+              style="display: grid"
+            >
+              <img
+                class="product__item__image"
+                src="../images/necklace-4.jpg"
+                alt="Classic Necklace"
+              />
+              <div class="product__item__detail">
+                <div class="product__item__detail__title">Classic Necklace</div>
+                <div class="product__item__detail__desc">
+                  Customize your gift
+                </div>
+                <div class="product__item__detail__price js-productItemPrice">
+                  $985
+                </div>
+              </div>
+              <button
+                class="button button--primary js-productItemButton"
+                type="button"
+                aria-label="Add to Cart"
+              >
+                Add to Cart
+              </button>
+            </div>
+            <div
+              class="product__item js-productItem"
+              data-id="15"
+              style="display: grid"
+            >
+              <img
+                class="product__item__image"
+                src="../images/necklace-cover.jpg"
+                alt="Chic Necklace"
+              />
+              <div class="product__item__detail">
+                <div class="product__item__detail__title">Chic Necklace</div>
+                <div class="product__item__detail__desc">
+                  Modern way of prettiness
+                </div>
+                <div class="product__item__detail__price js-productItemPrice">
+                  $1,235
+                </div>
+              </div>
+              <button
+                class="button button--primary js-productItemButton"
+                type="button"
+                aria-label="Add to Cart"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="faqs section-spacing" id="faqs">
+        <div class="container">
+          <header class="section-name-wrapper">
+            <div class="section-name mark">FAQ's</div>
+          </header>
+          <div class="faqs-container">
+            <div class="faqs-wrapper js-faqsWrapper is-show">
+              <button
+                class="faqs__question js-faqsQuestion"
+                type="button"
+                aria-label="FAQ's Questions"
+              >
+                <p class="faqs__question__title">
+                  How much money should I pay for delivery?
+                </p>
+                <div class="faqs__question__icon">
+                  <svg class="icon icon-down">
+                    <use xlink:href="#icon-down"></use>
+                  </svg>
+                </div>
+              </button>
+              <div class="faqs__answer">
+                You don't have to pay for delivery. It's totally free!
+              </div>
+            </div>
+            <div class="faqs-wrapper js-faqsWrapper">
+              <button
+                class="faqs__question js-faqsQuestion"
+                type="button"
+                aria-label="FAQ's Questions"
+              >
+                <p class="faqs__question__title">
+                  How many days should I wait before reaching you?
+                </p>
+                <div class="faqs__question__icon">
+                  <svg class="icon icon-down">
+                    <use xlink:href="#icon-down"></use>
+                  </svg>
+                </div>
+              </button>
+              <div class="faqs__answer">
+                It is enough to wait 3-7 days for the delivery.
+              </div>
+            </div>
+            <div class="faqs-wrapper js-faqsWrapper">
+              <button
+                class="faqs__question js-faqsQuestion"
+                type="button"
+                aria-label="FAQ's Questions"
+              >
+                <p class="faqs__question__title">Do you have refund policy?</p>
+                <div class="faqs__question__icon">
+                  <svg class="icon icon-down">
+                    <use xlink:href="#icon-down"></use>
+                  </svg>
+                </div>
+              </button>
+              <div class="faqs__answer">Yes, we have.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact section-spacing" id="contact">
+        <div class="container">
+          <header class="section-name-wrapper">
+            <div class="section-name mark">Contact Us</div>
+          </header>
+          <p class="contact__subtitle">We'd love to hear from you!</p>
+          <div class="contact-wrapper js-contactWrapper">
+            <div class="contact-wrapper-top">
+              <button
+                class="contact__header js-contactButton is-show"
+                type="button"
+                data-name="reach-us"
+              >
+                Reach Us
+              </button>
+              <button
+                class="contact__header js-contactButton"
+                type="button"
+                data-name="about-us"
+              >
+                About Us
+              </button>
+              <button
+                class="contact__header js-contactButton"
+                type="button"
+                data-name="find-us"
+              >
+                Find Us
+              </button>
+            </div>
+            <div class="contact-wrapper-bottom">
+              <div
+                class="contact__content contact__content--form js-contactContent is-show"
+                data-name="reach-us"
+              >
+                <figure>
+                  <img src="../images/necklace-cover.jpg" alt="Contact image" />
+                </figure>
+                <form method="POST" class="form">
+                  <label class="form__label" for="name">Your name</label>
+                  <input
+                    class="form__input"
+                    type="text"
+                    name="name"
+                    required=""
+                    placeholder="Enter your name"
+                    maxlength="34"
+                  />
+                  <label class="form__label" for="email">Your email</label>
+                  <input
+                    class="form__input"
+                    type="email"
+                    name="email"
+                    id="email"
+                    required=""
+                    placeholder="Enter your email"
+                  />
+                  <label class="form__label" for="message">Your message</label>
+                  <textarea
+                    class="form__input"
+                    name="message"
+                    id="message"
+                    cols="30"
+                    rows="5"
+                    required=""
+                    placeholder="Enter your message"
+                  ></textarea>
+                  <button
+                    class="button button--primary"
+                    type="submit"
+                    aria-label="Submit"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+              <div
+                class="contact__content contact__content--about js-contactContent"
+                data-name="about-us"
+              >
+                <div class="about">
+                  <p class="about__title">Who are we?</p>
+                  <p class="about__desc">
+                    We love making stuffs. Lorem ipsum dolor, sit amet
+                    consectetur adipisicing elit. Facere, exercitationem
+                    laborum, eaque aliquid rem delectus facilis eos culpa,
+                    accusantium maxime saepe magni voluptatem illum ut dicta
+                    quis quam reprehenderit. Maiores.<br />We love making
+                    stuffs. Lorem ipsum dolor, sit amet consectetur adipisicing
+                    elit. Facere, exercitationem laborum, eaque aliquid rem
+                    delectus facilis eos culpa.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="contact__content contact__content--map js-contactContent"
+                data-name="find-us"
+              >
+                <div class="about">
+                  <p class="about__title">Let's drink a coffee together!</p>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77979.65162748775!2d4.83392109458948!3d52.35474979514094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c63fb5949a7755%3A0x6600fd4cb7c0af8d!2sAmsterdam%2C%20Hollanda!5e0!3m2!1str!2str!4v1628799479371!5m2!1str!2str"
+                    width="100%"
+                    height="450"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer section-spacing">
+      <div class="container">
+        <div class="footer-wrapper">
+          <svg class="icon icon-logo header__logo__icon">
+            <use xlink:href="#icon-logo"></use>
+          </svg>
+          <div class="footer__rights">
+            © <time class="js-footerDate">2023</time> · Made with 💕 by
+            <a
+              class="link"
+              href="https://www.facebook.com/thaycacac"
+              title="@hey_fk"
+              target="blank"
+              >Thaycacac</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <a class="scroll-top js-scrollTop" href="#"
+      ><svg class="icon icon-up"><use xlink:href="#icon-up"></use></svg
+    ></a>
+    <script src="../javascript//header.js"></script>
+    <script src="../javascript//global.js"></script>
+    <script src="../javascript//countdown.js"></script>
+    <script src="../javascript//slider.js"></script>
+    <script src="../javascript//featured.js"></script>
+    <script src="../javascript//products.js"></script>
+    <script src="../javascript//faqs.js"></script>
+    <script src="../javascript//contact.js"></script>
+  </body>
+</html>
